@@ -1,19 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 
-const handleSubmit = (e) => {
-  e.preventDefault()
-  const saludo = document.querySelector('#saludo')
-  saludo.textContent = `Gracias por tu mensaje ${e.target[0].value}, te responderemos pronto.`
-}
-
 const Contacto = () => {
+  const [mensaje, setMensaje] = useState('')
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setMensaje(`Gracias por tu mensaje, enseguida te responderemos a ${e.target[0].value}.`)
+  }
   return (
     <div>
       <div className='container' style={{ height: '100vh' }}>
         <div className='d-flex-col align-items-center m-5'>
           <h1>Contacto</h1>
-          <h2 id='saludo' />
+
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId='formBasicEmail'>
               <Form.Label>Email address</Form.Label>
@@ -32,6 +31,7 @@ const Contacto = () => {
               Enviar
             </Button>
           </Form>
+          <h2>{mensaje}</h2>
         </div>
       </div>
     </div>

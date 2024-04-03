@@ -3,16 +3,17 @@ import { Form, Button } from 'react-bootstrap'
 
 const handleSubmit = (e) => {
   e.preventDefault()
-  console.log('Mensaje enviado')
-  console.log(e.target[0].value)
+  const saludo = document.querySelector('#saludo')
+  saludo.textContent = `Gracias por tu mensaje ${e.target[0].value}, te responderemos pronto.`
 }
+
 const Contacto = () => {
   return (
     <div>
       <div className='container' style={{ height: '100vh' }}>
         <div className='d-flex-col align-items-center m-5'>
           <h1>Contacto</h1>
-
+          <h2 id='saludo' />
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId='formBasicEmail'>
               <Form.Label>Email address</Form.Label>

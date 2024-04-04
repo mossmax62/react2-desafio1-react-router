@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Home = () => {
   return (
     <div>
-      <div className='container' style={{ height: '100vh' }}>
+      <div className='container'>
         <div className='d-flex-col align-items-center m-5'>
           <h1>Home</h1>
           <p>Bienvenido a mi sitio web</p>

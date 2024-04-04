@@ -9,7 +9,7 @@ const Contacto = () => {
   }
   return (
     <div>
-      <div className='container' style={{ height: '100vh' }}>
+      <div className='container'>
         <div className='d-flex-col align-items-center m-5'>
           <h1>Contacto</h1>
 
